@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "ESLint rules that ReverentGeek likes :)",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reverentgeek/eslint-config-reverentgeek.git"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ./ --fix"
   },
   "keywords": [
     "lint",
