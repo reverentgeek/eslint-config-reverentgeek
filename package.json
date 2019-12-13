@@ -1,0 +1,19 @@
+{
+  "name": "eslint-config-reverentgeek",
+  "version": "1.0.0",
+  "description": "ESLint rules that ReverentGeek likes :)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lint",
+    "eslint",
+    "reverentgeek"
+  ],
+  "author": "David Neal <david@reverentgeek.com> (https://reverentgeek.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.7.2"
+  }
+}
