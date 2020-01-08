@@ -1,8 +1,8 @@
+"use strict";
+
 module.exports = {
 	env: {
-		commonjs: true,
-		es6: true,
-		node: true
+		es6: true
 	},
 	extends: "eslint:recommended",
 	globals: {},
@@ -10,14 +10,15 @@ module.exports = {
 		ecmaVersion: 2019
 	},
 	rules: {
+		"array-bracket-spacing": [ "error", "always" ],
 		"eol-last": [ "error", "always" ],
 		indent: [ "error", "tab" ],
 		"linebreak-style": [ "error", "unix" ],
+		"no-console": [ "off" ],
+		"no-multiple-empty-lines": [ "error", { max: 1 } ],
+		"object-curly-spacing": [ "error", "always" ],
 		quotes: [ "error", "double" ],
 		semi: [ "error", "always" ],
-		"array-bracket-spacing": [ "error", "always" ],
-		"object-curly-spacing": [ "error", "always" ],
-		"space-in-parens": [ "error", "always" ],
-		"no-multiple-empty-lines": [ "error", { max: 1 } ]
+		"space-in-parens": [ "error", "always" ]
 	}
 };

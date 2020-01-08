@@ -18,3 +18,21 @@ module.exports = {
     extends: [ "reverentgeek" ]
 }
 ```
+
+## Alternative Rule Sets
+
+The _blog_ rule set changes to code style to two-spaced indentions, which is better for copying code samples to blog posts.
+
+```js
+module.exports = {
+    extends: [ "reverentgeek/blog" ]
+}
+```
+
+The _node_ rule set adds specific support for Node.js and CommonJS modules.
+
+```js
+module.exports = {
+    extends: [ "reverentgeek/node" ]
+}
+```
