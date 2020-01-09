@@ -19,6 +19,7 @@ module.exports = {
 		"object-curly-spacing": [ "error", "always" ],
 		quotes: [ "error", "double" ],
 		semi: [ "error", "always" ],
-		"space-in-parens": [ "error", "always" ]
+		"space-in-parens": [ "error", "always" ],
+		"template-curly-spacing": [ "error", "always" ]
 	}
 };
