@@ -16,6 +16,7 @@ module.exports = {
 		"linebreak-style": [ "error", "unix" ],
 		"no-console": [ "off" ],
 		"no-multiple-empty-lines": [ "error", { max: 1 } ],
+		"no-trailing-spaces": [ "error", { skipBlankLines: false, ignoreComments: false } ],
 		"object-curly-spacing": [ "error", "always" ],
 		quotes: [ "error", "double" ],
 		semi: [ "error", "always" ],
