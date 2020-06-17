@@ -7,6 +7,6 @@ module.exports = {
 	},
 	extends: "./index.js",
 	rules: {
-		"strict": [ "error", "global" ]
+		strict: [ "error", "global" ]
 	}
 };

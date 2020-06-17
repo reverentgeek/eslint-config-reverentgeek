@@ -19,6 +19,7 @@ module.exports = {
 		"no-trailing-spaces": [ "error", { skipBlankLines: false, ignoreComments: false } ],
 		"no-var": [ "error" ],
 		"object-curly-spacing": [ "error", "always" ],
+		"quote-props": [ "error", "as-needed" ],
 		quotes: [ "error", "double" ],
 		semi: [ "error", "always" ],
 		"space-in-parens": [ "error", "always" ],
