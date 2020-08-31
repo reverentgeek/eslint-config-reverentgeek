@@ -32,6 +32,8 @@ module.exports = {
 The _node_ rule set adds specific support for Node.js and CommonJS modules.
 
 ```js
+"use strict";
+
 module.exports = {
     extends: [ "reverentgeek/node" ]
 };
