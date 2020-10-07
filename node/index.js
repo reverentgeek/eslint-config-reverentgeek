@@ -5,7 +5,7 @@ module.exports = {
 		commonjs: true,
 		node: true
 	},
-	extends: "./index.js",
+	extends: "../index.js",
 	rules: {
 		strict: [ "error", "global" ]
 	}

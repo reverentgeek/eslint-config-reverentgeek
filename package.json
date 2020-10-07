@@ -1,23 +1,23 @@
 {
-  "name": "eslint-config-reverentgeek",
-  "version": "3.0.0",
-  "description": "ESLint rules that ReverentGeek likes :)",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/reverentgeek/eslint-config-reverentgeek.git"
-  },
-  "scripts": {
-    "lint": "eslint ./ --fix"
-  },
-  "keywords": [
-    "lint",
-    "eslint",
-    "reverentgeek"
-  ],
-  "author": "David Neal <david@reverentgeek.com> (https://reverentgeek.com)",
-  "license": "MIT",
-  "devDependencies": {
-    "eslint": "^7.2.0"
-  }
+	"name": "eslint-config-reverentgeek",
+	"version": "3.1.0",
+	"description": "ESLint rules that ReverentGeek likes :)",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/reverentgeek/eslint-config-reverentgeek.git"
+	},
+	"scripts": {
+		"lint": "eslint ./ --fix"
+	},
+	"keywords": [
+		"lint",
+		"eslint",
+		"reverentgeek"
+	],
+	"author": "David Neal <david@reverentgeek.com> (https://reverentgeek.com)",
+	"license": "MIT",
+	"devDependencies": {
+		"eslint": "^7.2.0"
+	}
 }

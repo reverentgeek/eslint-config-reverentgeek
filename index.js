@@ -7,7 +7,7 @@ module.exports = {
 	extends: "eslint:recommended",
 	globals: {},
 	parserOptions: {
-		ecmaVersion: 2019
+		ecmaVersion: 2020
 	},
 	rules: {
 		"array-bracket-spacing": [ "error", "always" ],

@@ -39,7 +39,17 @@ module.exports = {
 };
 ```
 
-The _browser_ rule set adds module support.
+The _node/module_ rule set adds specific support for Node.js and ES modules (`import`/`export`).
+
+```js
+"use strict";
+
+module.exports = {
+    extends: [ "reverentgeek/node/module" ]
+};
+```
+
+The _browser_ rule set the `browser` environment and adds ES module support.
 
 ```js
 module.exports = {
