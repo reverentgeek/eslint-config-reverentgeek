@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-	extends: "./node.js",
+	extends: "./node/index.js",
 	rules: {
 		indent: [ "error", 2 ],
 		"no-console": [ "off" ]
