@@ -5,7 +5,9 @@ module.exports = {
 		es6: true
 	},
 	extends: "eslint:recommended",
-	globals: {},
+	globals: { 
+		"globalThis": "readonly" 
+	},
 	parserOptions: {
 		ecmaVersion: 2020
 	},
