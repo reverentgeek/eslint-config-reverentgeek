@@ -15,7 +15,7 @@ npm install --save-dev eslint eslint-config-reverentgeek
 
 ```js
 module.exports = {
-    extends: [ "reverentgeek" ]
+	extends: [ "reverentgeek" ]
 };
 ```
 
@@ -25,7 +25,7 @@ The _blog_ rule set changes to code style to two-spaced indentions, which is bet
 
 ```js
 module.exports = {
-    extends: [ "reverentgeek/blog" ]
+	extends: [ "reverentgeek/blog" ]
 };
 ```
 
@@ -35,7 +35,7 @@ The _node_ rule set adds specific support for Node.js and CommonJS modules.
 "use strict";
 
 module.exports = {
-    extends: [ "reverentgeek/node" ]
+	extends: [ "reverentgeek/node" ]
 };
 ```
 
@@ -45,7 +45,7 @@ The _node/module_ rule set adds specific support for Node.js and ES modules (`im
 "use strict";
 
 module.exports = {
-    extends: [ "reverentgeek/node/module" ]
+	extends: [ "reverentgeek/node/module" ]
 };
 ```
 
@@ -53,6 +53,6 @@ The _browser_ rule set the `browser` environment and adds ES module support.
 
 ```js
 module.exports = {
-    extends: [ "reverentgeek/browser" ]
+	extends: [ "reverentgeek/browser" ]
 };
 ```
