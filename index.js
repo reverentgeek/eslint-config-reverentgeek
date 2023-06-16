@@ -9,7 +9,7 @@ module.exports = {
 		"globalThis": "readonly" 
 	},
 	parserOptions: {
-		ecmaVersion: 2020
+		ecmaVersion: 2022
 	},
 	rules: {
 		"array-bracket-spacing": [ "error", "always" ],
