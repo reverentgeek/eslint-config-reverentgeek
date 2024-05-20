@@ -1,30 +1,17 @@
 "use strict";
+const pkg = require( "./package.json" );
 
 module.exports = {
-	env: {
-		es6: true
+	meta: {
+		name: pkg.name,
+		version: pkg.version
 	},
-	extends: "eslint:recommended",
-	globals: { 
-		"globalThis": "readonly" 
-	},
-	parserOptions: {
-		ecmaVersion: 2022
-	},
-	rules: {
-		"array-bracket-spacing": [ "error", "always" ],
-		"eol-last": [ "error", "always" ],
-		indent: [ "error", "tab" ],
-		"linebreak-style": [ "error", "unix" ],
-		"no-console": [ "off" ],
-		"no-multiple-empty-lines": [ "error", { max: 1 } ],
-		"no-trailing-spaces": [ "error", { skipBlankLines: false, ignoreComments: false } ],
-		"no-var": [ "error" ],
-		"object-curly-spacing": [ "error", "always" ],
-		"quote-props": [ "error", "as-needed" ],
-		quotes: [ "error", "double" ],
-		semi: [ "error", "always" ],
-		"space-in-parens": [ "error", "always" ],
-		"template-curly-spacing": [ "error", "always" ]
+	configs: {
+		common: require( "./common" ),
+		blog: require( "./blog" ),
+		browser: require( "./browser" ),
+		node: require( "./node" ),
+		"node-esm": require( "./node-esm" ),
+		esm: require( "./esm" )
 	}
 };
