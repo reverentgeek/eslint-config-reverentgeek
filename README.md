@@ -65,11 +65,10 @@ module.exports = [
 The _node-esm_ config adds specific support for Node.js and ES modules (`import`/`export`).
 
 ```js
-"use strict";
+import rg from "eslint-config-reverentgeek";
 
-const rgConfig = require( "eslint-config-reverentgeek" );
-module.exports = [
-	...rgConfig.configs[ "node-esm" ],
+export default [
+	...rg.configs[ "node-esm" ],
 	{
 		rules: {
 			"n/no-unpublished-import": [ "error", {
