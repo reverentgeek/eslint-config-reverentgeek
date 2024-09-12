@@ -79,7 +79,7 @@ export default [
 ];
 ```
 
-The _react_ config adds specific support for Node.js and ES modules (`import`/`export`).
+The _react_ config adds specific support for React, browser, and ES modules (`import`/`export`).
 
 ```sh
 npm install --save-dev eslint-plugin-react
@@ -90,7 +90,7 @@ import rg from "eslint-config-reverentgeek";
 import react from "eslint-plugin-react";
 
 export default [
-	...rg.configs[ "node-esm" ],
+	...rg.configs.browser,
 	...rg.configs.react,
 	{
 		plugins: {
