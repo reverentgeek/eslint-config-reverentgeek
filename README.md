@@ -81,6 +81,10 @@ export default [
 
 The _react_ config adds specific support for Node.js and ES modules (`import`/`export`).
 
+```sh
+npm install --save-dev eslint-plugin-react
+```
+
 ```js
 import rg from "eslint-config-reverentgeek";
 import react from "eslint-plugin-react";
