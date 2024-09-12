@@ -12,6 +12,7 @@ module.exports = {
 		browser: require( "./browser" ),
 		node: require( "./node" ),
 		"node-esm": require( "./node-esm" ),
-		esm: require( "./esm" )
+		esm: require( "./esm" ),
+		react: require( "./react" )
 	}
 };

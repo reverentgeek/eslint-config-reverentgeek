@@ -79,6 +79,28 @@ export default [
 ];
 ```
 
+The _react_ config adds specific support for Node.js and ES modules (`import`/`export`).
+
+```js
+import rg from "eslint-config-reverentgeek";
+import react from "eslint-plugin-react";
+
+export default [
+	...rg.configs[ "node-esm" ],
+	...rg.configs.react,
+	{
+		plugins: {
+			react,
+		},
+		rules: {
+			"n/no-unpublished-import": [ "error", {
+				allowModules: [ "eslint-config-reverentgeek" ]
+			} ]
+		}
+	}
+];
+```
+
 The _browser_ config sets the `browser` environment and adds ES module support.
 
 ```js
