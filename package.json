@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-reverentgeek",
-	"version": "5.2.0",
+	"version": "5.2.1",
 	"description": "ESLint rules that ReverentGeek likes :)",
 	"main": "index.js",
 	"repository": {
