@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-reverentgeek",
-	"version": "5.3.0",
+	"version": "5.4.0",
 	"description": "ESLint rules that ReverentGeek likes :)",
 	"main": "index.js",
 	"repository": {
@@ -18,9 +18,9 @@
 	"author": "David Neal <david@reverentgeek.com> (https://reverentgeek.com)",
 	"license": "MIT",
 	"dependencies": {
-		"@stylistic/eslint-plugin": "^3.0.1",
+		"@stylistic/eslint-plugin": "^4.4.1",
 		"eslint-plugin-n": "^17.7.0",
-		"globals": "^15.0.0"
+		"globals": "^16.2.0"
 	},
 	"devDependencies": {
 		"eslint": "^9.1.1"
