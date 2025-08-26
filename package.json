@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-reverentgeek",
-	"version": "5.5.2",
+	"version": "5.5.3",
 	"description": "ESLint rules that ReverentGeek likes :)",
 	"main": "index.js",
 	"repository": {
@@ -23,6 +23,6 @@
 		"globals": "^16.2.0"
 	},
 	"devDependencies": {
-		"eslint": "^9.1.1"
+		"eslint": "^9.34.0"
 	}
 }
