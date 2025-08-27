@@ -1,12 +1,12 @@
 "use strict";
 
-module.exports = [ {
-	files: [ "**/*.{js,jsx,mjs,cjs,ts,tsx}" ],
+module.exports = {
 	languageOptions: {
 		parserOptions: {
 			ecmaFeatures: {
-				jsx: true,
-			},
-		},
+				jsx: true
+			}
+		}
 	}
-} ];
+};
+

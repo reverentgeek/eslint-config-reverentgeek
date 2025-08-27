@@ -1,7 +1,7 @@
 "use strict";
 const styles = require( "@stylistic/eslint-plugin" );
 
-module.exports = [ {
+module.exports = {
 	plugins: {
 		"@stylistic": styles
 	},
@@ -9,4 +9,5 @@ module.exports = [ {
 		"no-console": [ "off" ],
 		"@stylistic/indent": [ "error", 2 ]
 	}
-} ];
+};
+

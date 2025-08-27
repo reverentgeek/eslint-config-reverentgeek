@@ -1,10 +1,9 @@
 "use strict";
 
-module.exports = [
-	{
-		languageOptions: {
-			ecmaVersion: "latest",
-			sourceType: "module"
-		}
+module.exports = {
+	languageOptions: {
+		ecmaVersion: "latest",
+		sourceType: "module"
 	}
-];
+};
+
