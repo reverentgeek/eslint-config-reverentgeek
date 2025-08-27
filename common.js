@@ -10,6 +10,7 @@ const config = {
 		"no-console": [ "off" ],
 		"no-var": [ "error" ],
 		"@stylistic/array-bracket-spacing": [ "error", "always", { singleValue: true } ],
+		"@stylistic/brace-style": [ "error", "1tbs" ],
 		"@stylistic/comma-dangle": [ "error", "never" ],
 		"@stylistic/comma-spacing": [ "error", { before: false, after: true } ],
 		"@stylistic/eol-last": [ "error", "always" ],
