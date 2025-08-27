@@ -17,6 +17,7 @@ This package is [ReverentGeek's](https://twitter.com/reverentgeek) preferred con
 ```js
 "use strict";
 
+/* eslint-disable-next-line n/no-unpublished-require */
 const rgConfig = require( "eslint-config-reverentgeek" );
 module.exports = [
 	rgConfig.configs.common,
