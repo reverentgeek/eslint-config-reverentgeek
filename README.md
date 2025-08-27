@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD010 -->
 # eslint-config-reverentgeek
 
-This package is [ReverentGeek's](https://twitter.com/reverentgeek) preferred configuration settings for [eslint](https://eslint.org/).
+This package is [ReverentGeek's](https://reverentgeek.com/about/) preferred configuration settings for [eslint](https://eslint.org/).
 
 ## Usage (eslint >= v9.0)
 
