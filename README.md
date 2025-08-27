@@ -32,13 +32,13 @@ module.exports = [
 The _node-esm_ config adds specific support for Node.js and ES modules (`import`/`export`).
 
 ```js
+/* eslint-disable-next-line n/no-unpublished-import */
 import rg from "eslint-config-reverentgeek";
 
 export default [
 	rg.configs["node-esm"],
 	{
 		rules: {
-			"n/no-unpublished-import": [ "error", { allowModules: [ "eslint-config-reverentgeek" ] } ]
 		}
 	}
 ];
@@ -65,12 +65,12 @@ The _node_ config adds specific support for Node.js and CommonJS modules.
 ```js
 "use strict";
 
+/* eslint-disable-next-line n/no-unpublished-require */
 const rgConfig = require( "eslint-config-reverentgeek" );
 module.exports = [
 	rgConfig.configs.node,
 	{
 		rules: {
-			"n/no-unpublished-require": [ "error", { allowModules: [ "eslint-config-reverentgeek" ] } ]
 		}
 	}
 ];
@@ -83,6 +83,7 @@ npm install --save-dev eslint-plugin-react
 ```
 
 ```js
+/* eslint-disable-next-line n/no-unpublished-import */
 import rg from "eslint-config-reverentgeek";
 import react from "eslint-plugin-react";
 
@@ -94,7 +95,6 @@ export default [
 			react,
 		},
 		rules: {
-			"n/no-unpublished-import": [ "error", { allowModules: [ "eslint-config-reverentgeek" ] } ]
 		}
 	}
 ];
