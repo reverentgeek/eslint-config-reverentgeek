@@ -19,6 +19,7 @@ This package is [ReverentGeek's](https://twitter.com/reverentgeek) preferred con
 
 /* eslint-disable-next-line n/no-unpublished-require */
 const rgConfig = require( "eslint-config-reverentgeek" );
+
 module.exports = [
 	rgConfig.configs.common,
 	{
@@ -52,6 +53,7 @@ The _blog_ config changes the code style to two-spaced indentions, which is bett
 
 /* eslint-disable-next-line n/no-unpublished-require */
 const rgConfig = require( "eslint-config-reverentgeek" );
+
 module.exports = [
 	rgConfig.configs.browser,
 	rgConfig.configs.blog,
@@ -69,6 +71,7 @@ The _node_ config adds specific support for Node.js and CommonJS modules.
 
 /* eslint-disable-next-line n/no-unpublished-require */
 const rgConfig = require( "eslint-config-reverentgeek" );
+
 module.exports = [
 	rgConfig.configs.node,
 	{
@@ -110,6 +113,7 @@ The _browser_ config sets the `browser` environment and adds ES module support.
 
 /* eslint-disable-next-line n/no-unpublished-require */
 const rgConfig = require( "eslint-config-reverentgeek" );
+
 module.exports = [
 	rgConfig.configs.browser,
 	{
