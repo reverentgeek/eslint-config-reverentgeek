@@ -1,5 +1,4 @@
 "use strict";
-// merge-configs.js
 // Utility to merge ESLint config objects for name, plugins, languageOptions, and rules
 
 function merge( ...configs ) {
