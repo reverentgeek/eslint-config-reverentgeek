@@ -4,7 +4,7 @@ const { test, describe } = require( "node:test" );
 const assert = require( "node:assert" );
 const pkg = require( "../package.json" );
 const configModule = require( "../src/index.js" );
-const { expectedNames } = require( "./test-helpers.js" );
+const { expectedNames, getConfig } = require( "./test-helpers.js" );
 
 describe( "eslint-config-reverentgeek", () => {
 	test( "should export meta information", () => {
@@ -54,7 +54,7 @@ describe( "eslint-config-reverentgeek", () => {
 
 		test( "all configs should have correct names", () => {
 			for ( const [ configName, expectedName ] of Object.entries( expectedNames ) ) {
-				const config = configModule.configs[configName];
+				const config = getConfig( configName );
 				assert.ok( config.name, `${ configName } config should have a name property` );
 				assert.strictEqual( typeof config.name, "string", `${ configName } config name should be a string` );
 				assert.strictEqual( config.name, expectedName, `${ configName } config should have correct name` );

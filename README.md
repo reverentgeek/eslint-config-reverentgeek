@@ -17,68 +17,44 @@ This package is [ReverentGeek's](https://reverentgeek.com/about/) preferred conf
 ```js
 "use strict";
 
-/* eslint-disable-next-line n/no-unpublished-require */
-const rgConfig = require( "eslint-config-reverentgeek" );
+const defineConfig = require( "eslint/config" ).defineConfig; // eslint-disable-line n/no-unpublished-require
+const rg = require( "eslint-config-reverentgeek" ); // eslint-disable-line n/no-extraneous-require
 
-module.exports = [
-	rgConfig.configs.common,
+module.exports = defineConfig( [
 	{
+		extends: [ rg.configs.node ],
 		rules: {
 		}
 	}
-];
+] );
 ```
+
+The _node_ config adds specific support for Node.js and CommonJS modules.
 
 ## Alternative Configs
 
 The _node-esm_ config adds specific support for Node.js and ES modules (`import`/`export`).
 
 ```js
-/* eslint-disable-next-line n/no-unpublished-import */
-import rg from "eslint-config-reverentgeek";
+import { defineConfig } from "eslint/config"; // eslint-disable-line n/no-unpublished-import
+import rg from "eslint-config-reverentgeek"; // eslint-disable-line n/no-extraneous-import
 
-export default [
-	rg.configs["node-esm"],
-	{
-		rules: {
-		}
+export default defineConfig( {
+	extends: [ rg.configs["node-esm"] ],
+	rules: {
 	}
-];
+} );
 ```
 
 The _blog_ config changes the code style to two-spaced indentions, which is better for copying code samples to blog posts.
 
 ```js
-"use strict";
+import { defineConfig } from "eslint/config";
+import rg from "eslint-config-reverentgeek";
 
-/* eslint-disable-next-line n/no-unpublished-require */
-const rgConfig = require( "eslint-config-reverentgeek" );
-
-module.exports = [
-	rgConfig.configs.browser,
-	rgConfig.configs.blog,
-	{
-		rules: {
-		}
-	}
-];
-```
-
-The _node_ config adds specific support for Node.js and CommonJS modules.
-
-```js
-"use strict";
-
-/* eslint-disable-next-line n/no-unpublished-require */
-const rgConfig = require( "eslint-config-reverentgeek" );
-
-module.exports = [
-	rgConfig.configs.node,
-	{
-		rules: {
-		}
-	}
-];
+export default defineConfig( {
+  extends: [ rg.configs.browser, rg.configs.blog ]
+} );
 ```
 
 The _react_ config adds specific support for React, browser, and ES modules (`import`/`export`).
@@ -88,39 +64,29 @@ npm install --save-dev eslint-plugin-react
 ```
 
 ```js
-/* eslint-disable-next-line n/no-unpublished-import */
+import { defineConfig } from "eslint/config";
 import rg from "eslint-config-reverentgeek";
-/* eslint-disable-next-line n/no-unpublished-import */
 import react from "eslint-plugin-react";
 
-export default [
-	rg.configs.browser,
-	rg.configs.react,
-	{
-		plugins: {
-			react,
-		},
-		rules: {
-		}
+export default defineConfig( {
+	extends: [ rg.configs.browser, rg.configs.react ],
+	plugins: {
+		react
+	},
+	rules: {
 	}
-];
+} );
 ```
 
 The _browser_ config sets the `browser` environment and adds ES module support.
 
 ```js
-"use strict";
+import { defineConfig } from "eslint/config";
+import rg from "eslint-config-reverentgeek";
 
-/* eslint-disable-next-line n/no-unpublished-require */
-const rgConfig = require( "eslint-config-reverentgeek" );
-
-module.exports = [
-	rgConfig.configs.browser,
-	{
-		rules: {
-		}
-	}
-];
+export default defineConfig( {
+	extends: [ rg.configs.browser ]
+} );
 ```
 
 ## Legacy .eslintrc.js support (eslint < v9.0)

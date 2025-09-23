@@ -1,11 +1,13 @@
 "use strict";
 
+const defineConfig = require( "eslint/config" ).defineConfig; // eslint-disable-line n/no-unpublished-require
+
 const eslint = require( "@eslint/js" );
 const styles = require( "@stylistic/eslint-plugin" );
-const { merge } = require( "./utils" );
 
-const config = {
-	name: "reverentgeek-common",
+module.exports = defineConfig( {
+	name: "common",
+	extends: [ eslint.configs.recommended, styles.configs.recommended ],
 	rules: {
 		"no-console": [ "off" ],
 		"no-var": [ "error" ],
@@ -26,6 +28,5 @@ const config = {
 		"@stylistic/space-in-parens": [ "error", "always" ],
 		"@stylistic/template-curly-spacing": [ "error", "always" ]
 	}
-};
+} );
 
-module.exports = merge( eslint.configs.recommended, styles.configs.recommended, config );

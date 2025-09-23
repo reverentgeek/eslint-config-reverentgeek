@@ -1,12 +1,14 @@
 
 "use strict";
+
+const defineConfig = require( "eslint/config" ).defineConfig; // eslint-disable-line n/no-unpublished-require
 const common = require( "./common" );
 const nodePlugin = require( "eslint-plugin-n" );
 const nodeRecommended = nodePlugin.configs["flat/recommended-script"];
-const { merge } = require( "./utils" );
 
-const config = {
-	name: "reverentgeek-node-commonjs",
+module.exports = defineConfig( {
+	name: "node-commonjs",
+	extends: [ common, nodeRecommended ],
 	languageOptions: {
 		sourceType: "commonjs"
 	},
@@ -14,9 +16,4 @@ const config = {
 		strict: [ "error", "global" ],
 		"n/exports-style": [ "error" ]
 	}
-};
-
-const merged = merge( common, nodeRecommended, config );
-
-module.exports = merged;
-
+} );

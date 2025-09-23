@@ -1,4 +1,6 @@
 "use strict";
+const defineConfig = require( "eslint/config" ).defineConfig; // eslint-disable-line n/no-unpublished-require
+
 const node = require( "./src/node" );
 
 const config = {
@@ -19,5 +21,5 @@ const testConfig = {
 	}
 };
 
-module.exports = [ node, config, testConfig ];
+module.exports = defineConfig( [ node, config, testConfig ] );
 
