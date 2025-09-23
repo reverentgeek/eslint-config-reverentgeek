@@ -4,6 +4,7 @@ const common = require( "./common" );
 const { merge } = require( "./utils" );
 
 const config = {
+	name: "reverentgeek-browser",
 	languageOptions: {
 		ecmaVersion: "latest",
 		sourceType: "module",

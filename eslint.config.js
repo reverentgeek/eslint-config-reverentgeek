@@ -1,5 +1,5 @@
 "use strict";
-const node = require( "./node" );
+const node = require( "./src/node" );
 
 const config = {
 	rules: {
@@ -12,5 +12,12 @@ const config = {
 	}
 };
 
-module.exports = [ node, config ];
+const testConfig = {
+	files: [ "test/**/*.js" ],
+	rules: {
+		"n/no-unsupported-features/node-builtins": "off"
+	}
+};
+
+module.exports = [ node, config, testConfig ];
 
