@@ -36,8 +36,9 @@ The _node_ config adds specific support for Node.js and CommonJS modules.
 The _node-esm_ config adds specific support for Node.js and ES modules (`import`/`export`).
 
 ```js
-import { defineConfig } from "eslint/config"; // eslint-disable-line n/no-unpublished-import
-import rg from "eslint-config-reverentgeek"; // eslint-disable-line n/no-extraneous-import
+// eslint-disable n/no-unpublished-import
+import { defineConfig } from "eslint/config";
+import rg from "eslint-config-reverentgeek";
 
 export default defineConfig( {
 	extends: [ rg.configs["node-esm"] ],
