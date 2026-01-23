@@ -19,9 +19,9 @@
 	"author": "David Neal <david@reverentgeek.com> (https://reverentgeek.com)",
 	"license": "MIT",
 	"dependencies": {
-		"@stylistic/eslint-plugin": "^5.7.0",
+		"@stylistic/eslint-plugin": "^5.7.1",
 		"eslint-plugin-n": "^17.23.2",
-		"globals": "^17.0.0"
+		"globals": "^17.1.0"
 	},
 	"devDependencies": {
 		"eslint": "^9.39.2"
