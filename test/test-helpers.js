@@ -135,6 +135,25 @@ function getConfig( configName ) {
 	return configArray;
 }
 
+/**
+ * Test helper to verify a config inherits key rules from common.js
+ */
+function testInheritsCommonRules( config ) {
+	const commonRules = [
+		"@stylistic/indent",
+		"@stylistic/quotes",
+		"@stylistic/semi",
+		"no-var",
+		"no-console"
+	];
+
+	test( "should inherit common rules", () => {
+		commonRules.forEach( ( ruleName ) => {
+			assert.ok( config.rules[ruleName], `Should inherit common rule: ${ ruleName }` );
+		} );
+	} );
+}
+
 module.exports = {
 	configModule,
 	expectedNames,
@@ -142,5 +161,6 @@ module.exports = {
 	testHasRules,
 	testHasPlugins,
 	testLanguageOptions,
+	testInheritsCommonRules,
 	getConfig
 };

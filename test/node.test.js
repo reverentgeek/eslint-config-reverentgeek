@@ -1,7 +1,7 @@
 "use strict";
 
 const { describe } = require( "node:test" );
-const { testBasicConfigStructure, testHasRules, testHasPlugins, testLanguageOptions, getConfig } = require( "./test-helpers.js" );
+const { testBasicConfigStructure, testHasRules, testHasPlugins, testLanguageOptions, testInheritsCommonRules, getConfig } = require( "./test-helpers.js" );
 
 describe( "node config", () => {
 	const nodeConfig = getConfig( "node" );
@@ -13,4 +13,6 @@ describe( "node config", () => {
 	testHasRules( nodeConfig, [ "strict", "n/exports-style" ] );
 
 	testHasPlugins( nodeConfig, [ "n" ] );
+
+	testInheritsCommonRules( nodeConfig );
 } );

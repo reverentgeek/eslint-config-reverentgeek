@@ -16,4 +16,15 @@ describe( "blog config", () => {
 	} );
 
 	testHasPlugins( blogConfig, [ "@stylistic" ] );
+
+	test( "should be standalone and not inherit common rules", () => {
+		assert.strictEqual( blogConfig.rules["no-var"], undefined, "Should not have no-var rule (standalone config)" );
+		assert.strictEqual( blogConfig.rules["@stylistic/quotes"], undefined, "Should not have @stylistic/quotes rule (standalone config)" );
+	} );
+
+	test( "should have no-console set to off", () => {
+		const noConsoleRule = blogConfig.rules["no-console"];
+		assert.ok( noConsoleRule, "Should have no-console rule" );
+		assert.strictEqual( noConsoleRule[0], "off", "no-console should be set to off" );
+	} );
 } );

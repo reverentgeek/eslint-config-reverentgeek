@@ -1,7 +1,7 @@
 "use strict";
 
 const { describe } = require( "node:test" );
-const { testBasicConfigStructure, testLanguageOptions, getConfig } = require( "./test-helpers.js" );
+const { testBasicConfigStructure, testHasRules, testHasPlugins, testLanguageOptions, testInheritsCommonRules, getConfig } = require( "./test-helpers.js" );
 
 describe( "node-esm config", () => {
 	const nodeEsmConfig = getConfig( "node-esm" );
@@ -9,4 +9,10 @@ describe( "node-esm config", () => {
 	testBasicConfigStructure( "node-esm", nodeEsmConfig );
 
 	testLanguageOptions( nodeEsmConfig, "module" );
+
+	testHasRules( nodeEsmConfig, [ "n/exports-style" ] );
+
+	testHasPlugins( nodeEsmConfig, [ "n" ] );
+
+	testInheritsCommonRules( nodeEsmConfig );
 } );

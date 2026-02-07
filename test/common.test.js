@@ -8,7 +8,26 @@ describe( "common config", () => {
 
 	testBasicConfigStructure( "common", commonConfig );
 
-	testHasRules( commonConfig, [ "@stylistic/indent", "@stylistic/quotes", "@stylistic/semi", "@stylistic/brace-style" ] );
+	testHasRules( commonConfig, [
+		"no-var",
+		"no-console",
+		"@stylistic/array-bracket-spacing",
+		"@stylistic/brace-style",
+		"@stylistic/comma-dangle",
+		"@stylistic/comma-spacing",
+		"@stylistic/eol-last",
+		"@stylistic/indent",
+		"@stylistic/linebreak-style",
+		"@stylistic/no-multiple-empty-lines",
+		"@stylistic/no-tabs",
+		"@stylistic/no-trailing-spaces",
+		"@stylistic/object-curly-spacing",
+		"@stylistic/quote-props",
+		"@stylistic/quotes",
+		"@stylistic/semi",
+		"@stylistic/space-in-parens",
+		"@stylistic/template-curly-spacing"
+	] );
 
 	testHasPlugins( commonConfig, [ "@stylistic" ] );
 } );

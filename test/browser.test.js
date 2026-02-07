@@ -2,7 +2,7 @@
 
 const { test, describe } = require( "node:test" );
 const assert = require( "node:assert" );
-const { testBasicConfigStructure, testLanguageOptions, getConfig } = require( "./test-helpers.js" );
+const { testBasicConfigStructure, testHasPlugins, testLanguageOptions, testInheritsCommonRules, getConfig } = require( "./test-helpers.js" );
 
 describe( "browser config", () => {
 	const browserConfig = getConfig( "browser" );
@@ -17,4 +17,8 @@ describe( "browser config", () => {
 		assert.ok( Object.prototype.hasOwnProperty.call( browserConfig.languageOptions.globals, "document" ), "Should have document global" );
 		assert.ok( Object.prototype.hasOwnProperty.call( browserConfig.languageOptions.globals, "console" ), "Should have console global" );
 	} );
+
+	testHasPlugins( browserConfig, [ "@stylistic" ] );
+
+	testInheritsCommonRules( browserConfig );
 } );
