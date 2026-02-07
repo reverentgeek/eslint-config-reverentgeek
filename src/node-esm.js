@@ -1,5 +1,5 @@
 "use strict";
-const defineConfig = require( "eslint/config" ).defineConfig; // eslint-disable-line n/no-unpublished-require
+const defineConfig = require( "eslint/config" ).defineConfig;
 const common = require( "./common" );
 const nodePlugin = require( "eslint-plugin-n" );
 const nodeRecommended = nodePlugin.configs["flat/recommended-module"];
