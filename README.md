@@ -3,7 +3,19 @@
 
 This package is [ReverentGeek's](https://reverentgeek.com/about/) preferred configuration settings for [eslint](https://eslint.org/).
 
-## Usage (eslint >= v9.0)
+## Available Configs
+
+| Config | Description |
+| ------ | ----------- |
+| `common` | Base configuration with core stylistic and JavaScript rules |
+| `node` | Node.js with CommonJS modules (extends common) |
+| `node-esm` | Node.js with ES modules (extends common) |
+| `browser` | Browser environment with ES modules (extends common) |
+| `react` | Adds JSX support |
+| `esm` | ES modules support |
+| `blog` | 2-space indentation for blog code samples |
+
+## Usage
 
 1. Install dependencies.
 
@@ -46,7 +58,7 @@ export default defineConfig( {
 } );
 ```
 
-The _blog_ config changes the code style to two-spaced indentions, which is better for copying code samples to blog posts.
+The _blog_ config changes the code style to two-spaced indentations, which is better for copying code samples to blog posts.
 
 ```js
 import { defineConfig } from "eslint/config";
@@ -87,59 +99,4 @@ import rg from "eslint-config-reverentgeek";
 export default defineConfig( {
 	extends: [ rg.configs.browser ]
 } );
-```
-
-## Legacy .eslintrc.js support (eslint < v9.0)
-
-1. Install dependencies.
-
-	```sh
-	npm install --save-dev eslint@8 eslint-config-reverentgeek@4
-	```
-
-2. Create an `.eslintrc.js` file.
-3. Add the following to the config file.
-
-```js
-module.exports = {
-	extends: [ "reverentgeek" ]
-};
-```
-
-## Alternative Rule Sets
-
-The _blog_ rule set changes to code style to two-spaced indentions, which is better for copying code samples to blog posts.
-
-```js
-module.exports = {
-	extends: [ "reverentgeek/blog" ]
-};
-```
-
-The _node_ rule set adds specific support for Node.js and CommonJS modules.
-
-```js
-"use strict";
-
-module.exports = {
-	extends: [ "reverentgeek/node" ]
-};
-```
-
-The _node/module_ rule set adds specific support for Node.js and ES modules (`import`/`export`).
-
-```js
-"use strict";
-
-module.exports = {
-	extends: [ "reverentgeek/node/module" ]
-};
-```
-
-The _browser_ rule set the `browser` environment and adds ES module support.
-
-```js
-module.exports = {
-	extends: [ "reverentgeek/browser" ]
-};
 ```
