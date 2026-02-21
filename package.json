@@ -1,6 +1,6 @@
 {
 	"name": "eslint-config-reverentgeek",
-	"version": "7.0.1",
+	"version": "7.0.2",
 	"description": "ESLint rules that ReverentGeek likes :)",
 	"main": "src/index.js",
 	"exports": {
