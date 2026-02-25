@@ -37,10 +37,10 @@
 		"eslint": ">=10.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^10.0.1"
+		"eslint": "^10.0.2"
 	},
 	"engines": {
 		"node": ">=18.0.0"
 	},
-	"packageManager": "pnpm@10.29.2+sha512.bef43fa759d91fd2da4b319a5a0d13ef7a45bb985a3d7342058470f9d2051a3ba8674e629672654686ef9443ad13a82da2beb9eeb3e0221c87b8154fff9d74b8"
+	"packageManager": "pnpm@10.30.2+sha512.36cdc707e7b7940a988c9c1ecf88d084f8514b5c3f085f53a2e244c2921d3b2545bc20dd4ebe1fc245feec463bb298aecea7a63ed1f7680b877dc6379d8d0cb4"
 }
