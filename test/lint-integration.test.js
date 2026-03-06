@@ -5,17 +5,21 @@ const assert = require( "node:assert" );
 const { ESLint } = require( "eslint" );
 const configModule = require( "../src/index.js" );
 
+function flattenConfigs( configs ) {
+	return ( Array.isArray( configs ) ? configs.flat( Infinity ) : [ configs ] ).filter( Boolean );
+}
+
 function createESLint( configName, options = {} ) {
 	return new ESLint( {
 		overrideConfigFile: true,
-		overrideConfig: configModule.configs[configName],
+		overrideConfig: flattenConfigs( configModule.configs[configName] ),
 		...options
 	} );
 }
 
-async function lintText( configName, code, options = {} ) {
-	const eslint = createESLint( configName, options );
-	return eslint.lintText( code );
+async function lintText( configName, code, eslintOptions = {}, lintOptions = {} ) {
+	const eslint = createESLint( configName, eslintOptions );
+	return eslint.lintText( code, lintOptions );
 }
 
 function assertHasRuleError( results, ruleId ) {
@@ -100,6 +104,45 @@ describe( "lint integration: node config", () => {
 		const results = await lintText( "node", code );
 		const strictErrors = results[0].messages.filter( m => m.ruleId === "strict" );
 		assert.strictEqual( strictErrors.length, 0, "Should have no strict errors" );
+	} );
+} );
+
+describe( "lint integration: browser config", () => {
+	test( "should allow browser globals and module syntax", async () => {
+		const code = "export function render() {\n\twindow.document.body.textContent = \"hello\";\n}\n";
+		const results = await lintText( "browser", code, {}, { filePath: "browser.js" } );
+		assertNoErrors( results );
+	} );
+} );
+
+describe( "lint integration: esm config", () => {
+	test( "should allow ES module syntax", async () => {
+		const code = "export const greeting = \"hello\";\n";
+		const results = await lintText( "esm", code, {}, { filePath: "module.js" } );
+		assertNoErrors( results );
+	} );
+} );
+
+describe( "lint integration: node-esm config", () => {
+	test( "should allow import/export syntax in Node.js modules", async () => {
+		const code = "import path from \"node:path\";\n\nexport default path.sep;\n";
+		const results = await lintText( "node-esm", code, {}, { filePath: "module.mjs" } );
+		assertNoErrors( results );
+	} );
+} );
+
+describe( "lint integration: react config", () => {
+	test( "should parse JSX when composed with browser config", async () => {
+		const eslint = new ESLint( {
+			overrideConfigFile: true,
+			overrideConfig: [
+				...flattenConfigs( configModule.configs.browser ),
+				...flattenConfigs( configModule.configs.react )
+			]
+		} );
+		const code = "/* eslint-disable no-unused-vars */\nconst element = <div />;\ndocument.body.append( element );\n";
+		const results = await eslint.lintText( code, { filePath: "component.jsx" } );
+		assertNoErrors( results );
 	} );
 } );
 

@@ -15,6 +15,29 @@ const expectedNames = {
 	react: "react"
 };
 
+function mergeObjects( ...objects ) {
+	return objects.reduce( ( result, value ) => {
+		if ( !value || typeof value !== "object" || Array.isArray( value ) ) {
+			return result;
+		}
+
+		Object.entries( value ).forEach( ( [ key, nestedValue ] ) => {
+			if ( nestedValue && typeof nestedValue === "object" && !Array.isArray( nestedValue ) ) {
+				result[key] = mergeObjects( result[key], nestedValue );
+				return;
+			}
+
+			result[key] = nestedValue;
+		} );
+
+		return result;
+	}, {} );
+}
+
+function flattenConfigs( config ) {
+	return ( Array.isArray( config ) ? config.flat( Infinity ) : [ config ] ).filter( Boolean );
+}
+
 /**
  * Common test helper to validate basic ESLint config structure
  */
@@ -89,50 +112,29 @@ function testLanguageOptions( config, expectedSourceType, hasGlobals = false ) {
 
 /**
  * Get a config from the main module
- * Since configs are now arrays due to defineConfig, we need to handle them properly
  */
 function getConfig( configName ) {
-	const configArray = configModule.configs[configName];
+	const configs = flattenConfigs( configModule.configs[configName] );
 
-	// If it's an array (which it should be with defineConfig), we need to get the effective config
-	if ( Array.isArray( configArray ) ) {
-		// For testing purposes, we'll merge all configs in the array to get the effective configuration
-		// This simulates what ESLint would do when processing the config
-		const merged = {
-			name: null,
-			plugins: {},
-			rules: {},
-			languageOptions: {}
-		};
-
-		configArray.forEach( ( config ) => {
-			if ( config.name ) {
-				merged.name = config.name;
-			}
-			if ( config.plugins ) {
-				Object.assign( merged.plugins, config.plugins );
-			}
-			if ( config.rules ) {
-				Object.assign( merged.rules, config.rules );
-			}
-			if ( config.languageOptions ) {
-				Object.assign( merged.languageOptions, config.languageOptions );
-			}
-		} );
-
-		// Clean up empty objects
-		if ( Object.keys( merged.plugins ).length === 0 ) {
-			delete merged.plugins;
+	return configs.reduce( ( merged, config ) => {
+		if ( config.name ) {
+			merged.name = config.name;
 		}
-		if ( Object.keys( merged.languageOptions ).length === 0 ) {
-			delete merged.languageOptions;
+
+		if ( config.plugins ) {
+			merged.plugins = Object.assign( merged.plugins || {}, config.plugins );
+		}
+
+		if ( config.rules ) {
+			merged.rules = Object.assign( merged.rules || {}, config.rules );
+		}
+
+		if ( config.languageOptions ) {
+			merged.languageOptions = mergeObjects( merged.languageOptions, config.languageOptions );
 		}
 
 		return merged;
-	}
-
-	// Fallback for non-array configs (shouldn't happen with defineConfig)
-	return configArray;
+	}, {} );
 }
 
 /**

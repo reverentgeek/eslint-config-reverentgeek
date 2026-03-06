@@ -11,7 +11,7 @@ This package is [ReverentGeek's](https://reverentgeek.com/about/) preferred conf
 | `node` | Node.js with CommonJS modules (extends common) |
 | `node-esm` | Node.js with ES modules (extends common) |
 | `browser` | Browser environment with ES modules (extends common) |
-| `react` | Adds JSX support |
+| `react` | Adds JSX parsing support |
 | `esm` | ES modules support |
 | `blog` | 2-space indentation for blog code samples |
 
@@ -69,7 +69,7 @@ export default defineConfig( {
 } );
 ```
 
-The _react_ config adds specific support for React, browser, and ES modules (`import`/`export`).
+The _react_ config enables JSX parsing. Combine it with the _browser_ config for browser globals and ES module support. If you want React-specific lint rules, add `eslint-plugin-react` in your own config.
 
 ```sh
 npm install --save-dev eslint-plugin-react
@@ -86,6 +86,8 @@ export default defineConfig( {
 		react
 	},
 	rules: {
+		"react/jsx-uses-react": "off",
+		"react/react-in-jsx-scope": "off"
 	}
 } );
 ```
