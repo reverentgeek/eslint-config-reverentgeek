@@ -30,14 +30,14 @@
 	"dependencies": {
 		"@eslint/js": "^10.0.1",
 		"@stylistic/eslint-plugin": "^5.10.0",
-		"eslint-plugin-n": "^18.1.0",
+		"eslint-plugin-n": "^18.2.1",
 		"globals": "^17.7.0"
 	},
 	"peerDependencies": {
 		"eslint": ">=10.0.0"
 	},
 	"devDependencies": {
-		"eslint": "^10.5.0"
+		"eslint": "^10.6.0"
 	},
 	"engines": {
 		"node": ">=20.0.0"
