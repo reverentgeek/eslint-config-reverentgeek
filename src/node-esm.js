@@ -1,7 +1,7 @@
 "use strict";
 const defineConfig = require( "eslint/config" ).defineConfig;
 const common = require( "./common" );
-const nodePlugin = require( "eslint-plugin-n" ).default;
+const nodePlugin = require( "eslint-plugin-n" );
 const nodeRecommended = nodePlugin.configs["flat/recommended-module"];
 
 module.exports = defineConfig( {
