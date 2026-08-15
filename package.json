@@ -31,7 +31,7 @@
 		"@eslint/js": "^10.0.1",
 		"@stylistic/eslint-plugin": "^5.10.0",
 		"eslint-plugin-n": "^18.3.0",
-		"globals": "^17.9.0"
+		"globals": "^17.11.0"
 	},
 	"peerDependencies": {
 		"eslint": ">=10.0.0"
@@ -42,5 +42,5 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"packageManager": "pnpm@11.20.0+sha512.9a6f330a95b66446ea088faf1521405a8a01f07fde7124cc9958dfed52d4bb436737e65b08f85f37b46fcba375092558ac51262b816844b22f63406ed166bfee"
+	"packageManager": "pnpm@11.22.0+sha512.1ff870c4c6133dfd88fb2afc46dd13d47f09c9794b438c6fdb47ca98caf3bc16381ee0be93a091b8e3824cf01f889f46d7d9e20910fb0be1ab0fb5baa80dd621"
 }
